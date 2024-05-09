@@ -51,7 +51,7 @@ func init() {
 		}
 	}
 
-	initLogger()
+	// initLogger()
 	initLevelDb()
 
 	initDataSource()
