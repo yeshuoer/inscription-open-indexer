@@ -5,5 +5,5 @@
 .DS_Store
 *.output.txt
 /logs.txt
-/config.ini
+# /config.ini
 ./indexer

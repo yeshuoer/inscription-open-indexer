@@ -43,8 +43,8 @@ func StartSync() {
 		finished, err := syncBlock()
 		if err != nil {
 			if strings.HasPrefix(err.Error(), "sync: no more new block") {
-				logger.Println(err.Error() + ", wait 1s")
-				time.Sleep(time.Duration(1) * time.Second)
+				logger.Println(err.Error() + ", wait 3s")
+				time.Sleep(time.Duration(3) * time.Second)
 				continue
 			}
 			logger.Errorln("sync error:", err)
