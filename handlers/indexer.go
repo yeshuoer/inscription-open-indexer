@@ -273,7 +273,7 @@ func handleProtocols(inscription *model.Inscription) error {
 			value, ok := protoData["p"]
 			if ok && strings.TrimSpace(value) != "" {
 				protocol := strings.ToLower(value)
-				if protocol == "asc-20" {
+				if protocol == "ssc-20" {
 					var asc20 model.Asc20
 					asc20RecordId++
 					asc20.Id = asc20RecordId
