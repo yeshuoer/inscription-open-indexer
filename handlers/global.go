@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver/connstring"
 	"gopkg.in/ini.v1"
-	"io"
+	// "io"
 	"log"
 	"open-indexer/utils"
 	"os"
@@ -66,16 +66,17 @@ func init() {
 }
 
 func initLogger() {
-	writerStd := os.Stdout
-	writerFile, err := os.OpenFile("logs.txt", os.O_WRONLY|os.O_CREATE, 0755)
-	if err != nil {
-		logrus.Fatalf("create file logs.txt failed: %v", err)
-	}
+	// writerStd := os.Stdout
+	// writerFile, err := os.OpenFile("logs.txt", os.O_WRONLY|os.O_CREATE, 0755)
+	// if err != nil {
+	// 	logrus.Fatalf("create file logs.txt failed: %v", err)
+	// }
 
 	logger = logrus.New()
 	logger.SetLevel(logrus.InfoLevel)
 	logger.SetFormatter(&logrus.TextFormatter{})
-	logger.SetOutput(io.MultiWriter(writerStd, writerFile))
+	// logger.SetOutput(io.MultiWriter(writerStd, writerFile))
+	logger.SetOutput(os.Stdout)
 }
 
 func initLevelDb() {
